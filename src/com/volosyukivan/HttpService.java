@@ -141,7 +141,7 @@ public class HttpService extends Service {
     ServerSocketChannel ch;
     
     SharedPreferences prefs = context.getSharedPreferences("port", MODE_PRIVATE);
-    int savedPort = prefs.getInt("port", 7777);
+    int savedPort = prefs.getInt("port", 80);
 
     try {
       ch = ServerSocketChannel.open();
@@ -150,11 +150,11 @@ public class HttpService extends Service {
       return ch;
     } catch (IOException e) {}
     
-    if (savedPort != 7777) {
+    if (savedPort != 80) {
       try {
         ch = ServerSocketChannel.open();
         ch.socket().setReuseAddress(true);
-        ch.socket().bind(new java.net.InetSocketAddress(7777));
+        ch.socket().bind(new java.net.InetSocketAddress(80));
         return ch;
       } catch (IOException e) {}
     }
@@ -178,7 +178,7 @@ public class HttpService extends Service {
     try {
       ch = ServerSocketChannel.open();
       ch.socket().setReuseAddress(true);
-      ch.socket().bind(new java.net.InetSocketAddress(7777));
+      ch.socket().bind(new java.net.InetSocketAddress(80));
       return ch;
     } catch (Throwable t) {
       throw new RuntimeException(t);
