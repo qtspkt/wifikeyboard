@@ -41,7 +41,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 public class WiFiKeyboard extends Activity {
-    int port = 7777;
+    int port = 80;
     LinearLayout layout;
     ServiceConnection serviceConnection;
 
@@ -116,7 +116,7 @@ public class WiFiKeyboard extends Activity {
 //        try {
 //          ch = ServerSocketChannel.open();
 //          ch.socket().setReuseAddress(true);
-//          ch.socket().bind(new java.net.InetSocketAddress(7777));
+//          ch.socket().bind(new java.net.InetSocketAddress(80));
 //          ch = ServerSocketChannel.open();
 //          ch.socket().setReuseAddress(true);
 //          ch.socket().bind(new java.net.InetSocketAddress(1111));
